@@ -43,6 +43,13 @@ public class HomeController {
         model.addAttribute("cartCount", GlobalData.cart.size());
         return "index";
     } //index
+    @GetMapping("/contact")
+    public String contact(Model model) {
+        model.addAttribute("title", "Contact");
+        model.addAttribute("page", "Contact");
+        return "contact-us";
+    }
+
     @GetMapping("/users/add")
     public String updateUser(Model model){
         UserDTO currentUser = new UserDTO();

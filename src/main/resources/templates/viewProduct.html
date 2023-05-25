@@ -62,11 +62,12 @@
             <h2 th:text="${product.name}"></h2>
             <p th:text="${product.category.name}"></p>
             <h2>₹ <span th:text="${product.price}"></span></h2>
+            <h4> Số lượng: <span th:text="${product.quantity}"></span> </h4>
             <h5>Weight:
-                <spna th:text="${product.weight}"></spna> grams.
+                <span th:text="${product.weight}"></span> grams.
             </h5>
             <p th:text="${product.description}"></p>
-            <a href="" th:href="@{/addToCart/{id}(id = ${product.id})}" class="btn btn-primary">Add to cart</a>
+            <a href="" th:href="@{/addToCart/{id}(id = ${product.id})}" class="btn btn-primary" onclick="addToCart(${product.id})">Add to cart</a>
         </div>
     </div>
 </div>
