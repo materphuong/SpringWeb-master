@@ -41,6 +41,7 @@ public class HomeController {
     @GetMapping({"/", "/home"})
     public String home(Model model){
         model.addAttribute("cartCount", GlobalData.cart.size());
+        model.addAttribute("page", "Home");
         return "index";
     } //index
     @GetMapping("/contact")
@@ -49,6 +50,7 @@ public class HomeController {
         model.addAttribute("page", "Contact");
         return "contact-us";
     }
+
 
     @GetMapping("/users/add")
     public String updateUser(Model model){
@@ -93,6 +95,7 @@ public class HomeController {
         model.addAttribute("cartCount", GlobalData.cart.size());
         model.addAttribute("categories", categoryService.getAllCategory());
         model.addAttribute("products", productService.getAllProduct());
+        model.addAttribute("page", "Shop");
         return "shop";
     } //view All Products
 

@@ -16,7 +16,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 @Controller
 public class CartController {
     private final ProductService productService;
@@ -49,7 +48,7 @@ public class CartController {
                 GlobalData.cart.add(product);
             }
         }
-        return "redirect:/cart";
+        return "redirect:/shop";
     }
 
     @PostMapping("/cart/updateQuantity")
@@ -93,3 +92,4 @@ public class CartController {
                 .sum();
     }
 }
+

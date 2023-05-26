@@ -27,6 +27,7 @@ import java.util.Optional;
 
 @Controller
 public class AdminController {
+
     public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/static/productImages";
     @Autowired
     private PasswordEncoder bCryptPasswordEncoder;
@@ -59,6 +60,7 @@ public class AdminController {
     public String getUserAdd(Model model){
         model.addAttribute("userDTO", new UserDTO());
         model.addAttribute("roles",roleService.getAllRole());
+
         return "usersAdd";
     }
     @PostMapping("/admin/users/add")
@@ -218,4 +220,5 @@ public class AdminController {
         }
 
     }//form edit product, fill old data into form
+
 }
